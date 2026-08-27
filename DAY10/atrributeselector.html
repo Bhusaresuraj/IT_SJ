@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute selectors</title>
+    <style>
+    a[href] {
+        color: red;
+        text-decoration: none;
+        font-size: 20px;    
+    }
+    img[src]
+    {
+        background-color: yellow;
+    }
+    a[href="./combinator.html"]
+    {
+        background-color:green;
+    }
+
+    a[href^="./"]{
+        background-color: black;
+    }
+
+    a[href$=".html"]
+    {
+        background-color: blueviolet;
+    }
+
+
+    </style>
+</head>
+<body>
+   
+        <a href="./combinator.html">Home</a>
+         <a href="./cssselector.html">about</a>
+          <a>cotact</a>
+          <img src="/DAY 3/images/IT_Vedant.webp" alt="coding image" height="100px" width="100px">
+          <img src="/DAY 3/images/w3.png." alt="this is w3 image" height="100px" width="100px">
+</body>
+</html>
