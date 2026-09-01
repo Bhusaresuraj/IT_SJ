@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InFoMedia - A. P. J. Abdul Kalam</title>
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-page: #f2f2f2;
+            --bg-card: #ffffff;
+            --bg-dark: #222222;
+            --bg-header: #333333;
+            --bg-body-text: #f9f9f9;
+            --text-dark: #111111;
+            --text-light: #ffffff;
+            --text-muted: #666666;
+            --link-blue: #0056b3;
+            --border-grey: #cccccc;
+            --border-light: #e0e0e0;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            --transition: all 0.25s ease-in-out;
+        }
+
+        /* General Resets */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-page);
+            color: #333;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        a {
+            color: var(--link-blue);
+            text-decoration: underline;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: #003d7a;
+            text-decoration: none;
+        }
+
+        /* Outer Container */
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        /* Header Style */
+        header {
+            background-color: var(--bg-header);
+            color: var(--text-light);
+            display: flex;
+            align-items: stretch;
+            min-height: 140px;
+            position: relative;
+            border-bottom: 5px solid #1a1a1a;
+        }
+
+        /* Left Side: Logo Box */
+        .header-logo-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 35px;
+            border-right: 2px solid #555;
+            text-align: center;
+            min-width: 220px;
+        }
+
+        .logo-seal {
+            width: 44px;
+            height: 44px;
+            border: 1px dashed rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .logo-seal-inner {
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .logo-main-text {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .logo-sub-text {
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #bbbbbb;
+            text-transform: uppercase;
+        }
+
+        /* Right Side: Header Main */
+        .header-main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 40px;
+        }
+
+        .header-line {
+            height: 2px;
+            background-color: #555555;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* Main Content Layout */
+        .content-container {
+            display: grid;
+            grid-template-columns: 290px 1fr;
+            gap: 25px;
+            padding: 25px;
+            position: relative;
+        }
+
+        /* Sidebar Card Container */
+        .sidebar {
+            position: relative;
+            z-index: 100;
+        }
+
+        /* Floating/Overlapping Sidebar Card */
+        .sidebar-card {
+            background-color: var(--bg-card);
+            border: 3px solid #111111;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .sidebar-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 400px rgba(0,0,0,0.2);
+        }
+
+        /* Portrait Container */
+        .portrait-box {
+            width: 100%;
+            background-color: #000000;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .portrait-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #333333;
+            display: block;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background-color: var(--border-grey);
+            margin: 15px 0;
+        }
+
+        .sidebar-links {
+            list-style: none;
+            padding-left: 100px;
+        }
+
+        .sidebar-links li {
+            position: relative;
+            margin-bottom: 12px;
+            padding-left: 15px;
+            font-size: 0.88rem;
+            line-height: 1.4;
+        }
+
+        .sidebar-links li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--link-blue);
+            font-size: 1.2rem;
+            top: -10px;
+        }
+
+        /* Right Column Article */
+        .article-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Label Row */
+        .article-label {
+            background-color: #e0e0e0;
+            border-top: 1px solid var(--border-grey);
+            border-bottom: 1px solid var(--border-grey);
+            color: #555555;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 0;
+            margin-bottom: 5px;
+        }
+
+        
+        .section-block {
+            border: 2px solid #111111;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .section-hdr {
+            background-color: #111111;
+            color: var(--text-light);
+            padding: 10px 18px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .section-body {
+            background-color: var(--bg-body-text);
+            padding: 18px 20px;
+            font-size: 0.92rem;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Text Highlights & Formatting */
+        .name-link {
+            text-decoration: underline;
+            font-weight: 600;
+            color: #222222;
+        }
+
+        .highlight {
+            background-color: #ffff00;
+            padding: 0 2px;
+            font-weight: 600;
+        }
+
+        sup {
+            font-size: 0.7rem;
+            vertical-align: super;
+        }
+
+        /* Bottom Section - Full Width under columns */
+        .full-width-section {
+            grid-column: 1 / -1;
+            margin-top: 10px;
+        }
+
+        .list-group {
+            margin-bottom: 18px;
+        }
+
+        .list-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #111111;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+        }
+
+        .full-width-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .full-width-section ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .full-width-section li {
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-container {
+                grid-template-columns: 1fr;
+                padding: 15px;
+            }
+
+            .sidebar-card {
+                margin-top: 380px;
+            }
+
+            header {
+                flex-direction: column;
+            }
+
+            .header-logo-box {
+                border-right: none;
+                border-bottom: 1px solid #555;
+                padding: 15px;
+            }
+
+            .header-main {
+                padding: 20px;
+            }
+
+            .header-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Header Section -->
+        <header>
+            <div class="header-logo-box">
+                <div class="logo-seal">
+                    <div class="logo-seal-inner"></div>
+                </div>
+                <div class="logo-main-text">Infomedia</div>
+                <div class="logo-sub-text">Chase Wisdom</div>
+            </div>
+            <div class="header-main">
+                <div class="header-line"></div>
+                <div class="header-title">InfoMedia</div>
+            </div>
+        </header>
+
+        <!-- Main Layout Area -->
+        <div class="content-container">
+            
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <div class="portrait-box">
+                        <!-- Portrait Image of Dr. A. P. J. Abdul Kalam -->
+                        <img class="portrait-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/A._P._J._Abdul_Kalam.jpg/400px-A._P._J._Abdul_Kalam.jpg" alt="A. P. J. Abdul Kalam">
+                    </div>
+                    <div class="sidebar-divider"></div>
+                    <ul class="sidebar-links">
+                        <li><a href="#early-life">Early life and education</a></li>
+                        <li><a href="#career">Career as a scientist</a></li>
+                        <li><a href="#books-culture">Books, documentaries and popular culture</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Right Article Columns -->
+            <main class="article-column">
+                <div class="article-label">Article</div>
+
+                <!-- Section 1: Biography Intro -->
+                <section class="section-block" id="intro">
+                    <div class="section-hdr">A. P. J. Abdul Kalam</div>
+                    <div class="section-body">
+                        <span class="name-link">Avul Pakir Jainulabdeen Abdul Kalam</span> (15 October 1931 &ndash; 27 July 2015) was an Indian aerospace scientist and statesman who served as the 11<sup>th</sup> president of India from 2002 to 2007. He was born and raised in Rameswaram, Tamil Nadu and studied physics and aerospace engineering. He was involved in India's space program and military missile development, earning him the title "<span class="highlight">Missile Man of India</span>". He played a key role in India's Pokhran-II nuclear tests in 1998.
+                    </div>
+                </section>
+
+                <!-- Section 2: Early Life and Education -->
+                <section class="section-block" id="early-life">
+                    <div class="section-hdr">Early Life and Education</div>
+                    <div class="section-body">
+                        Dr. Kalam was born on 15 October 1931 in Rameswaram, Tamil Nadu. His father was a boat owner, and his mother was a housewife. He pursued aerospace engineering at the Madras Institute of Technology, where he faced challenges but excelled. Although he aimed to be a fighter pilot, he missed selection by one rank.
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Bottom Section: Books & Documentaries -->
+            <section class="full-width-section section-block" id="books-culture">
+                <div class="section-hdr">Books, Documentaries and Popular Culture</div>
+                <div class="section-body">
+                    
+                    <!-- Kalam's Writings Sublist -->
+                    <div class="list-group">
+                        <div class="list-title">Kalam's writings</div>
+                        <ul>
+                            <li><a href="#">Developments in Fluid Mechanics and Space Technology</a> by A P J Abdul Kalam and Roddam Narasimha.</li>
+                            <li><a href="#">The Luminous Sparks</a> by A P J Abdul Kalam.</li>
+                            <li><a href="#">Target 3 Billion</a> by A P J Abdul Kalam and Srijan Pal Singh.</li>
+                            <li><a href="#">My Journey: Transforming Dreams into Actions</a> by A P J Abdul Kalam.</li>
+                            <li><a href="#">Turning Points: A journey through challenges</a> by A P J Abdul Kalam.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Biographies Sublist -->
+                    <div class="list-group" style="margin-top: 10px; " >
+                        <div class="list-title" >Biographies</div>
+                        <ol>
+                            <li><a href="#">Eternal Quest: Life and Times of Dr Kalam</a> by S Chandra.</li>
+                            <li><a href="#">President A P J Abdul Kalam</a> by Pruthi.</li>
+                        </ol>
+                        
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>

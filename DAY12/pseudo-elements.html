@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::first-letter
+        {
+            color: red;
+            font-size: 200px;
+        }
+
+        p::first-line
+        {
+            color: black;
+            
+        }
+
+        p::selection
+        {
+            background: yellow;
+        }
+
+        div::before
+        
+        {
+            content: "this is before tag";
+            color: red;
+        }
+
+        div::after
+        {
+            content: "this is after tag";
+            color: blue;
+        }
+        span::after
+        {
+            content: "this is after span tag";
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <p>
+       Infinite Vision
+    </p>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid eum veritatis expedita nihil, 
+        dignissimos placeat ad. Quod, aspernatur sint id at fugiat quas maiores beatae. Consequatur, 
+        veniam. Atque, illo recusandae vero dolorum maxime nostrum id est fugit. 
+        Officia, cupiditate itaque. Quam ipsam porro nisi laborum ad ipsum vero quia consequatur?
+    </p>
+
+    <div>This is div tag</div>
+
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Laboriosam voluptatibus qui repudiandae omnis, dolore tempora.</span>
+</body>
+</html>

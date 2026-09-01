@@ -1,0 +1,660 @@
+IMPORTANT CSS POINTS MISSED IN CLASS
+
+1. ID should be unique:
+
+   * The `id` of an HTML element should be unique within a page.
+   * The same `id` should not normally be given to multiple elements.
+   * Example: `<p id="para1">Hello</p>`
+   * ID is mainly used when we want to identify or target one specific element.
+
+2. Class does NOT have to be unique:
+
+   * A `class` can be used on multiple HTML elements.
+   * This is one of the main purposes of using classes.
+   * Example:
+     `<p class="text">Hello</p>`
+     `<p class="text">World</p>`
+   * Both elements can use the same `text` class.
+
+3. An element can have both ID and Class:
+
+   * The same HTML element can have an `id` and a `class`.
+   * Example: `<p id="para1" class="text">Hello</p>`
+   * Here, `para1` is the ID and `text` is the class.
+
+4. ID and Class have different CSS selectors:
+
+   * ID is selected using `#`.
+   * Class is selected using `.`.
+   * Example:
+     `#para1 { color: red; }`
+     `.text { font-size: 20px; }`
+
+5. The same class can be used on many elements:
+
+   * If multiple elements need the same styling, we can give them the same class.
+   * Example:
+     `<h1 class="heading">Welcome</h1>`
+     `<h2 class="heading">About Us</h2>`
+     `<p class="heading">Hello</p>`
+   * CSS: `.heading { color: blue; }`
+   * All three elements will receive the same class styling.
+
+6. The same ID should NOT be reused:
+
+   * Avoid using the same ID for multiple elements.
+   * Incorrect practice:
+     `<p id="text">Hello</p>`
+     `<p id="text">World</p>`
+   * If multiple elements need the same styling, use a class instead.
+
+7. The same name can be used for an ID and a Class:
+
+   * It is possible to have `id="text"` and `class="text"` on the same or different elements.
+   * Example:
+     `<p id="text" class="text">Hello</p>`
+   * CSS can distinguish them because `#text` means ID and `.text` means Class.
+
+8. One element can have multiple classes:
+
+   * An HTML element can have more than one class.
+   * Example: `<p class="text bold large">Hello</p>`
+   * Here the element has three classes: `text`, `bold`, and `large`.
+   * Each class can provide different styling.
+
+9. ID has higher specificity than Class:
+
+   * If both an ID selector and a class selector apply different values to the same property on the same element, the ID selector generally has higher specificity.
+   * Example:
+     `.text { color: blue; }`
+     `#para1 { color: red; }`
+   * If the element has both `class="text"` and `id="para1"`, the ID rule will generally win, so the text will be red.
+
+10. Easy way to remember:
+
+* ID = ONE specific element.
+* Class = MANY elements.
+* `#` = ID selector.
+* `.` = Class selector.
+
+11. Most important correction:
+
+* ID should be unique.
+* Class does NOT need to be unique.
+* Do not confuse "unique name" with "same name".
+* The same class name can be reused, while an ID should identify only one element on the page.
+
+
+
+
+CSS COLOUR SYSTEM
+
+1. Named Colors:
+
+   * CSS provides predefined color names that can be directly used.
+   * Example: `color: red;`
+   * Some examples are `red`, `blue`, `green`, `black`, `white`, `yellow`, `orange`, `purple`, etc.
+   * Example:
+     `p { color: red; }`
+
+2. RGB (Red, Green, Blue):
+
+   * RGB stands for Red, Green, and Blue.
+   * A color is created by combining different amounts of Red, Green, and Blue.
+   * Each value ranges from `0` to `255`.
+   * `rgb(0, 0, 0)` = Black.
+   * `rgb(255, 255, 255)` = White.
+   * `rgb(255, 0, 0)` = Red.
+   * `rgb(0, 255, 0)` = Green.
+   * `rgb(0, 0, 255)` = Blue.
+   * Example:
+     `p { color: rgb(255, 0, 0); }`
+
+3. RGBA:
+
+   * RGBA stands for Red, Green, Blue, and Alpha.
+   * The first three values work exactly like RGB.
+   * The Alpha value controls transparency/opacity.
+   * Alpha ranges from `0` to `1`.
+   * `0` = Completely transparent.
+   * `1` = Completely opaque.
+   * Example:
+     `color: rgba(255, 0, 0, 0.5);`
+   * This creates red with 50% transparency.
+
+4. HEX (Hexadecimal):
+
+   * HEX is one of the most commonly used color systems in CSS.
+   * A HEX color starts with `#` followed by 6 hexadecimal characters.
+   * The format is:
+     `#RRGGBB`
+   * `RR` = Red.
+   * `GG` = Green.
+   * `BB` = Blue.
+   * Each pair can range from `00` to `FF`.
+   * `#000000` = Black.
+   * `#FFFFFF` = White.
+   * `#FF0000` = Red.
+   * `#00FF00` = Green.
+   * `#0000FF` = Blue.
+   * Example:
+     `p { color: #FF0000; }`
+
+5. Understanding HEX:
+
+   * HEX uses hexadecimal numbers instead of normal decimal numbers.
+   * Hexadecimal uses:
+     `0 1 2 3 4 5 6 7 8 9 A B C D E F`
+   * Therefore:
+     `00` = Minimum value.
+     `FF` = Maximum value.
+   * Example:
+     `#FF0000`
+
+     * `FF` = Maximum Red.
+     * `00` = No Green.
+     * `00` = No Blue.
+     * Therefore the result is Red.
+
+6. HSL:
+
+   * HSL stands for Hue, Saturation, and Lightness.
+   * Hue represents the basic color.
+   * Saturation represents the intensity or richness of the color.
+   * Lightness represents how light or dark the color is.
+   * Example:
+     `color: hsl(0, 100%, 50%);`
+   * This represents red.
+
+7. HSLA:
+
+   * HSLA stands for Hue, Saturation, Lightness, and Alpha.
+   * It is similar to HSL but also includes transparency.
+   * Example:
+     `color: hsla(0, 100%, 50%, 0.5);`
+   * This represents red with 50% transparency.
+
+8. Current CSS commonly used color systems:
+
+   * Named Colors → `red`
+   * RGB → `rgb(255, 0, 0)`
+   * RGBA → `rgba(255, 0, 0, 0.5)`
+   * HEX → `#FF0000`
+   * HSL → `hsl(0, 100%, 50%)`
+   * HSLA → `hsla(0, 100%, 50%, 0.5)`
+
+9. Color can be applied to different CSS properties:
+
+   * `color` → Changes the text color.
+   * `background-color` → Changes the background color.
+   * `border-color` → Changes the border color.
+   * Example:
+     `p {`
+     `    color: white;`
+     `    background-color: black;`
+     `    border-color: red;`
+     `}`
+
+10. Easy way to remember RGB:
+
+    * RGB = Red + Green + Blue.
+    * Each value ranges from `0` to `255`.
+    * `0` means none of that color.
+    * `255` means maximum amount of that color.
+
+11. Easy way to remember HEX:
+
+    * HEX format = `#RRGGBB`
+    * RR = Red.
+    * GG = Green.
+    * BB = Blue.
+    * Range of each pair = `00` to `FF`.
+    * `00` = minimum.
+    * `FF` = maximum.
+
+12. Important:
+
+    * Different color systems can represent the same color.
+    * For example, pure red can be written as:
+      `red`
+      `rgb(255, 0, 0)`
+      `#FF0000`
+      `hsl(0, 100%, 50%)`
+    * They represent the same basic red color, but they use different ways of describing it.
+
+
+CSS TEXT AND TEXT DECORATION
+
+1. Text Color:
+
+   * The `color` property is used to change the color of the text.
+   * Example:
+     `p { color: red; }`
+   * We can use different color systems such as named colors, RGB, HEX, HSL, etc.
+   * Example:
+     `p { color: #FF0000; }`
+
+2. Text Alignment:
+
+   * The `text-align` property is used to control the horizontal alignment of text.
+   * Common values are:
+     `left`
+     `right`
+     `center`
+     `justify`
+   * Example:
+     `p { text-align: center; }`
+   * `left` → Text is aligned to the left.
+   * `right` → Text is aligned to the right.
+   * `center` → Text is placed in the center.
+   * `justify` → Text is aligned evenly along both the left and right sides.
+
+3. Text Decoration:
+
+   * The `text-decoration` property is used to add or remove decorative lines from text.
+   * Common values are:
+     `underline`
+     `overline`
+     `line-through`
+     `none`
+   * Example:
+     `p { text-decoration: underline; }`
+   * `underline` → Adds a line below the text.
+   * `overline` → Adds a line above the text.
+   * `line-through` → Adds a line through the text.
+   * `none` → Removes the decoration.
+
+4. Text Decoration with Multiple Values:
+
+   * `text-decoration` can also be used with multiple values.
+   * Example:
+     `text-decoration: underline red;`
+   * This means the text will have a red underline.
+
+5. Text Decoration Color:
+
+   * The `text-decoration-color` property is used to change the color of the decoration line.
+   * Example:
+     `p {`
+     `    text-decoration: underline;`
+     `    text-decoration-color: red;`
+     `}`
+   * The text and the decoration can therefore have different colors.
+
+6. Text Decoration Style:
+
+   * The `text-decoration-style` property controls the style of the decoration line.
+   * Common values are:
+     `solid`
+     `double`
+     `dotted`
+     `dashed`
+     `wavy`
+   * Example:
+     `text-decoration: underline;`
+     `text-decoration-style: wavy;`
+   * `solid` → Normal continuous line.
+   * `double` → Two lines.
+   * `dotted` → Dotted line.
+   * `dashed` → Dashed line.
+   * `wavy` → Wavy line.
+
+7. Text Decoration Thickness:
+
+   * The `text-decoration-thickness` property controls the thickness of the decoration line.
+   * Example:
+     `p {`
+     `    text-decoration: underline;`
+     `    text-decoration-thickness: 3px;`
+     `}`
+
+8. Text Transform:
+
+   * The `text-transform` property is used to change the capitalization of text.
+   * Common values are:
+     `uppercase`
+     `lowercase`
+     `capitalize`
+     `none`
+   * Example:
+     `p { text-transform: uppercase; }`
+   * `uppercase` → Converts text to capital letters.
+   * `lowercase` → Converts text to small letters.
+   * `capitalize` → Makes the first letter of each word uppercase.
+   * `none` → Keeps the text as it is.
+
+9. Text Indent:
+
+   * The `text-indent` property is used to create space before the first line of a paragraph.
+   * Example:
+     `p { text-indent: 50px; }`
+   * This moves the first line of the paragraph 50px to the right.
+
+10. Letter Spacing:
+
+    * The `letter-spacing` property controls the amount of space between individual letters.
+    * Example:
+      `p { letter-spacing: 2px; }`
+    * Positive values increase the space between letters.
+    * Negative values decrease the space between letters.
+
+11. Word Spacing:
+
+    * The `word-spacing` property controls the amount of space between words.
+    * Example:
+      `p { word-spacing: 10px; }`
+    * This increases the space between each word.
+
+12. Line Height:
+
+    * The `line-height` property controls the vertical space between lines of text.
+    * Example:
+      `p { line-height: 2; }`
+    * A larger value creates more space between lines.
+    * A smaller value creates less space between lines.
+
+13. Text Shadow:
+
+    * The `text-shadow` property adds a shadow effect to text.
+    * Basic syntax:
+      `text-shadow: horizontal vertical blur color;`
+    * Example:
+      `p { text-shadow: 2px 2px 5px gray; }`
+    * `2px` → Horizontal shadow position.
+    * `2px` → Vertical shadow position.
+    * `5px` → Blur amount.
+    * `gray` → Shadow color.
+
+14. Important Difference Between Text Color and Text Decoration:
+
+    * `color` changes the actual color of the text.
+    * `text-decoration` adds or removes a line or other decoration around the text.
+    * Example:
+      `p {`
+      `    color: blue;`
+      `    text-decoration: underline;`
+      `}`
+    * Here, the text is blue and has an underline.
+
+15. Removing Default Link Underline:
+
+    * By default, links (`<a>`) usually have an underline.
+    * We can remove it using:
+      `a { text-decoration: none; }`
+    * Example:
+      `<a href="#">Home</a>`
+      `a { text-decoration: none; }`
+    * This removes the default underline from the link.
+
+16. Easy Revision:
+
+    * `color` → Text color.
+    * `text-align` → Horizontal alignment.
+    * `text-decoration` → Decoration/line.
+    * `text-decoration-color` → Decoration color.
+    * `text-decoration-style` → Decoration style.
+    * `text-decoration-thickness` → Decoration thickness.
+    * `text-transform` → Changes capitalization.
+    * `text-indent` → Space before the first line.
+    * `letter-spacing` → Space between letters.
+    * `word-spacing` → Space between words.
+    * `line-height` → Space between lines.
+    * `text-shadow` → Shadow behind text.
+
+
+
+CSS MARGIN, PADDING AND BORDER
+
+1. CSS Box Model:
+
+   * Every HTML element is treated as a rectangular box in CSS.
+   * The CSS Box Model consists of four main parts:
+     Content → Padding → Border → Margin
+   * Content is the actual text, image, or other content inside the element.
+   * Padding is the space between the content and the border.
+   * Border is the line surrounding the padding and content.
+   * Margin is the space outside the border, between the element and other elements.
+
+2. Padding:
+
+   * The `padding` property is used to create space INSIDE an element.
+   * Padding creates space between the content and the border.
+   * Example:
+     `p { padding: 20px; }`
+   * This creates 20px of space between the content and the border on all four sides.
+   * Important: Padding is INSIDE the border.
+
+3. Padding on Individual Sides:
+
+   * We can give different padding values to different sides.
+   * `padding-top` → Space at the top.
+   * `padding-right` → Space on the right.
+   * `padding-bottom` → Space at the bottom.
+   * `padding-left` → Space on the left.
+   * Example:
+     `p {`
+     `    padding-top: 10px;`
+     `    padding-right: 20px;`
+     `    padding-bottom: 30px;`
+     `    padding-left: 40px;`
+     `}`
+
+4. Padding Shorthand:
+
+   * Instead of writing all four properties separately, we can use the `padding` shorthand.
+   * `padding: 10px;`
+     → All four sides = 10px.
+   * `padding: 10px 20px;`
+     → Top & Bottom = 10px.
+     → Left & Right = 20px.
+   * `padding: 10px 20px 30px;`
+     → Top = 10px.
+     → Left & Right = 20px.
+     → Bottom = 30px.
+   * `padding: 10px 20px 30px 40px;`
+     → Top = 10px.
+     → Right = 20px.
+     → Bottom = 30px.
+     → Left = 40px.
+   * Remember the order:
+     TOP → RIGHT → BOTTOM → LEFT
+   * This follows a clockwise direction.
+
+5. Margin:
+
+   * The `margin` property is used to create space OUTSIDE an element.
+   * Margin creates space between the element's border and surrounding elements.
+   * Example:
+     `p { margin: 20px; }`
+   * This creates 20px of space outside the element on all four sides.
+   * Important: Margin is OUTSIDE the border.
+
+6. Margin on Individual Sides:
+
+   * We can give different margin values to different sides.
+   * `margin-top` → Space outside at the top.
+   * `margin-right` → Space outside on the right.
+   * `margin-bottom` → Space outside at the bottom.
+   * `margin-left` → Space outside on the left.
+   * Example:
+     `p {`
+     `    margin-top: 10px;`
+     `    margin-right: 20px;`
+     `    margin-bottom: 30px;`
+     `    margin-left: 40px;`
+     `}`
+
+7. Margin Shorthand:
+
+   * Margin also supports shorthand values.
+   * `margin: 10px;`
+     → All four sides = 10px.
+   * `margin: 10px 20px;`
+     → Top & Bottom = 10px.
+     → Left & Right = 20px.
+   * `margin: 10px 20px 30px;`
+     → Top = 10px.
+     → Left & Right = 20px.
+     → Bottom = 30px.
+   * `margin: 10px 20px 30px 40px;`
+     → Top = 10px.
+     → Right = 20px.
+     → Bottom = 30px.
+     → Left = 40px.
+   * Remember:
+     TOP → RIGHT → BOTTOM → LEFT
+
+8. Auto Margin:
+
+   * `margin: auto` can be used to automatically distribute available horizontal space.
+   * It is commonly used to center a block-level element when it has a defined width.
+   * Example:
+     `.box {`
+     `    width: 300px;`
+     `    margin: auto;`
+     `}`
+   * The browser automatically creates equal left and right margins, which centers the element horizontally.
+
+9. Border:
+
+   * The `border` property is used to create a boundary around an element.
+   * A border is located between the padding and margin.
+   * Basic syntax:
+     `border: width style color;`
+   * Example:
+     `p { border: 2px solid black; }`
+   * Here:
+     `2px` → Border thickness.
+     `solid` → Border style.
+     `black` → Border color.
+
+10. Border Width:
+
+    * The `border-width` property controls the thickness of the border.
+    * Example:
+      `border-width: 5px;`
+    * We can also specify different widths for different sides.
+    * Example:
+      `border-width: 1px 2px 3px 4px;`
+    * Order:
+      Top → Right → Bottom → Left.
+
+11. Border Style:
+
+    * The `border-style` property controls the appearance/style of the border.
+    * Common values include:
+      `solid`
+      `dashed`
+      `dotted`
+      `double`
+      `none`
+    * Example:
+      `border: 2px dashed black;`
+    * `solid` → Continuous line.
+    * `dashed` → Dashed line.
+    * `dotted` → Dotted line.
+    * `double` → Double line.
+    * `none` → No border.
+
+12. Border Color:
+
+    * The `border-color` property controls the color of the border.
+    * Example:
+      `border-color: red;`
+    * We can use named colors, HEX, RGB, HSL, etc.
+    * Example:
+      `border: 2px solid #ff0000;`
+
+13. Border on Individual Sides:
+
+    * We can apply a border separately to each side.
+    * `border-top`
+    * `border-right`
+    * `border-bottom`
+    * `border-left`
+    * Example:
+      `p {`
+      `    border-top: 2px solid red;`
+      `    border-bottom: 2px solid blue;`
+      `}`
+
+14. Border Radius:
+
+    * The `border-radius` property is used to make the corners of an element rounded.
+    * Example:
+      `border-radius: 10px;`
+    * A larger value creates more rounded corners.
+    * Example:
+      `border-radius: 50%;`
+    * When the element has equal width and height, `border-radius: 50%` can make it circular.
+
+15. Important Difference Between Margin and Padding:
+
+    * Margin creates space OUTSIDE the element.
+    * Padding creates space INSIDE the element.
+    * Example:
+      `div {`
+      `    margin: 20px;`
+      `    padding: 20px;`
+      `}`
+    * `margin` creates space between this element and other elements.
+    * `padding` creates space between the content and the element's border.
+
+16. Understanding the Box Model:
+
+    * The structure can be remembered as:
+      `MARGIN → BORDER → PADDING → CONTENT`
+    * From the outside moving inward:
+      Margin → Border → Padding → Content
+    * From the content moving outward:
+      Content → Padding → Border → Margin
+
+17. Example of All Three Together:
+
+    * Example:
+      `.box {`
+      `    margin: 20px;`
+      `    border: 2px solid black;`
+      `    padding: 15px;`
+      `}`
+    * Here:
+      `margin: 20px` → Creates 20px space outside the box.
+      `border: 2px solid black` → Creates a 2px black boundary.
+      `padding: 15px` → Creates 15px space between the content and border.
+
+18. Easy Way to Remember:
+
+    * Margin = OUTSIDE space.
+    * Border = BOUNDARY/LINE.
+    * Padding = INSIDE space.
+    * Content = ACTUAL content.
+    * Think of a box:
+
+      MARGIN
+      ↓
+      BORDER
+      ↓
+      PADDING
+      ↓
+      CONTENT
+
+19. Important Shorthand Rule:
+
+    * For both `margin` and `padding`, when four values are given, remember:
+      TOP → RIGHT → BOTTOM → LEFT
+    * Example:
+      `margin: 10px 20px 30px 40px;`
+      → Top = 10px.
+      → Right = 20px.
+      → Bottom = 30px.
+      → Left = 40px.
+
+20. Final Revision:
+
+    * `margin` → Space outside the element.
+    * `padding` → Space inside the element.
+    * `border` → Boundary around the element.
+    * `border-radius` → Makes corners rounded.
+    * `margin: auto` → Commonly used to center a fixed-width block horizontally.
+    * `margin` and `padding` both support shorthand values.
+    * Four-value shorthand order = Top → Right → Bottom → Left.

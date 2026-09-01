@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: 10px double black;
+        }
+        .p1{
+            border: 5px solid black;
+        }
+        .p2
+        {
+            border: 5px dotted black;
+        }
+        .p3
+        {
+            border: 5px dashed black;
+        }
+        .p4
+        {
+            border: 5px solid black;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        div p
+        {
+            border-top: 1px dashed red;
+            border-left: 1px dotted blue;
+            border-right: 1px solid green;
+            border-bottom: 1px double yellow;
+        }
+
+        div p::selection
+        {
+            color: red;
+            background: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Enter your name</label>
+        <input type="text" placeholder="enter your name">
+    </form>
+
+    <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Amet illum veritatis nesciunt eum, quam voluptatum autem aspernatur.
+    </p>
+
+     <p class="p2">Lorem ipsum dolor sit amet.</p>
+
+     <p class="p3">Lorem ipsum dolor sit amet.</p>
+
+     <p class="p4">Lorem ipsum dolor sit amet consectetur.</p>
+
+     <div>
+        <p>hi this is suraj</p>
+     </div>
+</body>
+</html>

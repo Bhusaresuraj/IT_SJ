@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div2
+        {
+            background: #000;
+        }
+        
+        div p{
+            color: white;
+            text-align: center;
+        }
+        div p::selection{
+            color: pink;
+            font-weight: bold;
+        }
+
+        div p::before
+        {
+            
+        }
+
+         div p::after
+        {
+            content: "Read more";
+            color: purple;
+        }
+
+       .suraj::first-letter
+       {
+        font-size: 20px;
+        color: purple;
+       }
+
+       .rocket-icon::before
+       {
+        content: " ";
+        background-image: url('/download\ \(1\).png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+       }
+       
+    </style>
+</head>
+<body>
+
+
+ <div class="suraj">
+    <h1 >Galaxy</h1>
+ </div>
+   
+<div id="div2">
+
+    <p class="rocket-icon">
+     Universe the whole cosmixc system of matter and energy of which Earth. 
+    and therefore the human race is a tiny part.Humanity has traveled a long road since societies
+    imagined earth the sun and the moon as the main obejct of creation with the rest
+    </p>
+</div>
+</body>
+</html>
