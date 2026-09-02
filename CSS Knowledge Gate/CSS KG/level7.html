@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+
+    <style>
+        div {
+            height: 100px;
+            width: 200px;
+            background-color: aqua;
+            text-align: center;
+            letter-spacing: 50px;
+            border: 2px solid red;
+            
+        }
+
+        div:hover
+        {
+        color: brown; 
+        background-color: brown;
+        transition: all 5s ease-in-out;
+        transform: skew(90deg);
+         transform: translateX(50px);
+         transform: rotate(45deg);
+         transform: scaleX(2);
+         transform: scaleY(2);
+         transform: scale(2);
+         transform: skewX(45deg);
+         transform: skewY(45deg);
+         transform: skew(45deg);
+         transform: matrix(1, 2, 3, 4, 5, 6);
+
+         
+        }
+
+        button
+        {
+            display: block;
+            margin: auto;
+            font-size: larger;
+            background: aqua;
+            border: 2px solid black;
+            
+
+        }
+
+        button:hover
+        {
+            color: #a5932a;
+            background-color: #f8e10f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        click me
+    </div>
+
+
+    <button>click me</button>
+
+</body>
+</html>
